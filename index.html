@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .skin {
+        height: 500px;
+        width: 500px;
+        min-height: 100px;
+    }
+
+    .slidecontainer {
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<div class="settings">
+    Skin Color
+    <form style="display: flex; flex-direction: column;">
+        <div class="slidecontainer">Hue
+            <input type="range" min="0" max="360" value="0" class="slider" id="skinHueRange">
+            <p>Value: <span id="skinHueValue">0</span></p>
+        </div>
+        <div class="slidecontainer">Saturation
+            <input type="range" min="0" max="100" value="50" class="slider" id="skinSaturationRange">
+            <p>Value: <span id="skinSaturationValue">50</span></p>
+        </div>
+        <div class="slidecontainer">Brightness
+            <input type="range" min="0" max="100" value="50" class="slider" id="skinBrightnessRange">
+            <p>Value: <span id="skinBrightnessValue">50</span></p>
+        </div>
+        <div class="slidecontainer" style="display: none">Temp
+            <input type="range" min="1" max="100" value="50" class="slider" id="skinTempRange">
+            <p>Value: <span id="skinTempValue">50</span></p>
+        </div>
+        <div>Hex code: <span id="skinHexCode">#000000</span></div>
+    </form>
+</div>
+<div class="skin" style="background-color: red;">
+    <svg id="lipSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+          <!--path d="M66.477,33.675c-5.687-3.117-10.428,4.487-16.768,4.487c-4.276,0-10.203-5.712-14.555-3.814  C26.872,37.957,6.17,42.94,6.17,42.94c0.381,0.126,0.771,0.236,1.154,0.358c1.976,2.6,18.462,23.777,31.061,23.777h24.45  c13.646,0,30.009-25.124,30.033-24.71c0.006,0.083-0.002-0.035-0.01-0.17c0.301-0.089,0.622-0.156,0.921-0.247  C94.935,41.602,76.157,38.978,66.477,33.675z"></path-->
+        <path  d="M93.482,43.825c-0.087,0.019-0.17,0.033-0.257,0.052c0.061-0.038,0.103-0.064,0.103-0.064  c-2.464-1.085-4.465-2.866-4.465-2.866c-11.29-7.299-24.514-15.712-24.514-15.712C58.457,23.152,51.788,28.56,50,30.164  c-1.788-1.604-8.457-7.012-14.348-4.929c0,0-13.225,8.413-24.514,15.712c0,0-2.001,1.781-4.465,2.866c0,0,0.041,0.026,0.103,0.064  c-0.087-0.018-0.169-0.033-0.257-0.052c0,0,1.626,1.408,4.796,2.613c-0.039,0.03-0.087,0.058-0.115,0.091  c0,0,4.114,23.179,23.103,27.223c0,0,6.361,1.354,15.248,1.472c0,0.004,0,0.008,0,0.012c0.153-0.001,0.299-0.004,0.45-0.006  c0.151,0.001,0.297,0.005,0.45,0.006c0-0.004,0-0.008,0-0.012c8.888-0.118,15.248-1.472,15.248-1.472  c18.989-4.044,23.103-27.223,23.103-27.223c-0.028-0.032-0.076-0.061-0.115-0.091C91.856,45.233,93.482,43.825,93.482,43.825z   M66.542,46.801c-3.004,1.247-9.976,1.683-16.542,1.789c-6.566-0.107-13.538-0.542-16.542-1.789c0,0-0.834-0.087-2.166-0.21  c3.101-0.888,6.479-2.21,10.137-4.113c0,0,0.936,0.521,3.498,0.796c1.141,0.161,2.542,0.282,4.191,0.282L50,43.46l0.882,0.097  c1.65,0,3.05-0.122,4.191-0.282c2.561-0.275,3.498-0.796,3.498-0.796c3.658,1.903,7.036,3.225,10.137,4.113  C67.376,46.714,66.542,46.801,66.542,46.801z"></path>
+    </svg>
+</div>
+<div class="settings">
+    Lip Color
+    <form style="display: flex; flex-direction: column;">
+        <div class="slidecontainer">Hue
+            <input type="range" min="0" max="360" value="180" class="slider" id="lipHueRange">
+            <p>Value: <span id="lipHueValue">180</span></p>
+        </div>
+        <div class="slidecontainer">Saturation
+            <input type="range" min="0" max="100" value="50" class="slider" id="lipSaturationRange">
+            <p>Value: <span id="lipSaturationValue">50</span></p>
+        </div>
+        <div class="slidecontainer">Brightness
+            <input type="range" min="0" max="100" value="50" class="slider" id="lipBrightnessRange">
+            <p>Value: <span id="lipBrightnessValue">50</span></p>
+        </div>
+        <div class="slidecontainer" style="display: none">Temp
+            <input type="range" min="0" max="100" value="50" class="slider" id="lipTempRange">
+            <p>Value: <span id="lipTempValue">50</span></p>
+        </div>
+        <div>Hex code: <span id="lipHexCode">#000000</span></div>
+    </form>
+</div>
+<script>
+
+var skinHueSlider = document.getElementById("skinHueRange");
+var skinSaturationSlider = document.getElementById("skinSaturationRange");
+var skinBrightnessSlider = document.getElementById("skinBrightnessRange");
+var skinTempSlider = document.getElementById("skinTempRange");
+
+var lipHueSlider = document.getElementById("lipHueRange");
+var lipSaturationSlider = document.getElementById("lipSaturationRange");
+var lipBrightnessSlider = document.getElementById("lipBrightnessRange");
+var lipTempSlider = document.getElementById("lipTempRange");
+
+var skinHueOutput = document.getElementById("skinHueValue");
+var skinSaturationOutput = document.getElementById("skinSaturationValue");
+var skinBrightnessOutput = document.getElementById("skinBrightnessValue");
+var skinTempOutput = document.getElementById("skinTempValue");
+
+var lipHueOutput = document.getElementById("lipHueValue");
+var lipSaturationOutput = document.getElementById("lipSaturationValue");
+var lipBrightnessOutput = document.getElementById("lipBrightnessValue");
+var lipTempOutput = document.getElementById("lipTempValue");
+
+var skinHexCode = document.getElementById("skinHexCode");
+var lipHexCode = document.getElementById("lipHexCode");
+
+function updateSkinColor() {
+    var hue = skinHueSlider.value;
+    var saturation = skinSaturationSlider.value;
+    var brightness = skinBrightnessSlider.value;
+
+    // Convert HSL to hex
+    var skinColor = hslToHex(hue, saturation, brightness);
+
+    // Update the background color
+    document.querySelector(".skin").style.backgroundColor = skinColor;
+
+    // Update the hex code display
+    skinHexCode.innerText = skinColor;
+}
+
+function updateLipColor() {
+    var lipHue = lipHueSlider.value;
+    var lipSaturation = lipSaturationSlider.value;
+    var lipBrightness = lipBrightnessSlider.value;
+
+    // Convert HSL to hex
+    var lipColor = hslToHex(lipHue, lipSaturation, lipBrightness);
+
+    // Update the fill color of the lip SVG
+    document.querySelector("#lipSVG path").style.fill = lipColor;
+
+    // Update the hex code display
+    lipHexCode.innerText = lipColor;
+}
+
+// Function to convert HSL to hex
+function hslToHex(h, s, l) {
+    h /= 360;
+    s /= 100;
+    l /= 100;
+    var r, g, b;
+
+    if (s === 0) {
+        r = g = b = l; // Achromatic
+    } else {
+        var hue2rgb = function hue2rgb(p, q, t) {
+            if (t < 0) t += 1;
+            if (t > 1) t -= 1;
+            if (t < 1 / 6) return p + (q - p) * 6 * t;
+            if (t < 1 / 2) return q;
+            if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+            return p;
+        };
+
+        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        var p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1 / 3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1 / 3);
+    }
+
+    var toHex = function (x) {
+        var hex = Math.round(x * 255).toString(16);
+        return hex.length === 1 ? '0' + hex : hex;
+    };
+
+    return '#' + toHex(r) + toHex(g) + toHex(b);
+}
+
+// Attach event listeners to all sliders for skin color
+skinHueSlider.addEventListener("input", updateSkinColor);
+skinSaturationSlider.addEventListener("input", updateSkinColor);
+skinBrightnessSlider.addEventListener("input", updateSkinColor);
+skinTempSlider.addEventListener("input", updateSkinColor);
+
+// Attach event listeners to all sliders for lip color
+lipHueSlider.addEventListener("input", function () {
+    updateLipColor();
+    updateValueDisplay(lipHueSlider, lipHueOutput);
+});
+lipSaturationSlider.addEventListener("input", function () {
+    updateLipColor();
+    updateValueDisplay(lipSaturationSlider, lipSaturationOutput);
+});
+lipBrightnessSlider.addEventListener("input", function () {
+    updateLipColor();
+    updateValueDisplay(lipBrightnessSlider, lipBrightnessOutput);
+});
+lipTempSlider.addEventListener("input", function () {
+    updateLipColor();
+    updateValueDisplay(lipTempSlider, lipTempOutput);
+});
+
+// Initial update
+updateSkinColor();
+updateLipColor();
+</script>
+</body>
+</html>
